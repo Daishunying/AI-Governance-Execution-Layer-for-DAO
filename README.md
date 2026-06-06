@@ -312,3 +312,113 @@ AI-Native DAO Operating System
 ## 项目愿景（Vision）
 
 DAOOS 不试图让 AI 替代 DAO 做出治理决策，而是帮助组织更高效地执行已经通过的治理决议。通过 AI 驱动的任务规划、成果验证、审计追踪和长期任务管理能力，DAOOS 希望成为连接“治理决策”与“实际交付”之间的执行层基础设施。
+
+---
+
+### 1. LangGraph
+
+#### 它解决什么问题
+
+LangGraph 解决的是 AI Agent 长周期任务（Long-Horizon Task）的状态管理问题。传统 LLM 应用通常只能完成单轮推理，而 LangGraph 允许 Agent 在多个步骤之间保存状态、调用工具、根据结果调整计划，并形成完整工作流。
+
+对于 DAOOS 而言，Proposal Review → Milestone Planning → Verification → Audit 本质上就是一个多阶段状态机，因此 LangGraph 非常适合作为 Agent Workflow 编排框架。
+
+#### 边界是什么
+
+LangGraph 解决的是 Agent 如何组织任务和工具调用的问题，但不负责判断任务是否正确完成，也不提供治理规则、权限控制或资金安全机制。
+
+换句话说，它解决“如何执行”，而不解决“是否应该执行”。
+
+#### 还缺什么
+
+对于 DAO 场景，还需要结合：
+
+* Human-in-the-Loop
+* Policy Engine
+* Audit Layer
+* Wallet Permission System
+
+才能形成可信执行环境。
+
+---
+
+### 2. Safe（原 Gnosis Safe）
+
+#### 它解决什么问题
+
+Safe 是目前 Web3 中最成熟的多签钱包和权限管理系统之一。它解决的是资金控制权过于集中的问题，通过多签审批、角色权限和交易策略来保证资金安全。
+
+对于 DAOOS 而言，Safe 提供了 Human-in-the-Loop 和 Safe Execution 的现实参考模型。
+
+#### 边界是什么
+
+Safe 可以控制谁有权限执行交易，但并不负责分析 Proposal、规划任务或验证项目成果。
+
+它是执行层的安全基础设施，而不是治理执行系统。
+
+#### 还缺什么
+
+未来 Agent Economy 场景下，Safe 缺少：
+
+* Agent 行为审计
+* Agent 身份与信誉
+* 自动化任务执行能力
+* 长周期任务管理
+
+这些正是 DAOOS 希望补充的部分。
+
+---
+
+### 3. Snapshot
+
+#### 它解决什么问题
+
+Snapshot 是目前 DAO 中最广泛使用的治理工具之一。它解决的是提案创建、社区讨论和链下投票的问题，大幅降低了治理成本。
+
+DAO 可以通过 Snapshot 完成：
+
+Proposal → Discussion → Vote
+
+这一治理流程。
+
+#### 边界是什么
+
+Snapshot 的边界也非常明确：
+
+投票结束后，它不负责项目执行。
+
+例如：
+
+* 谁跟踪进度？
+* 谁验证成果？
+* 谁决定释放资金？
+* 谁生成审计报告？
+
+这些都不在 Snapshot 的能力范围内。
+
+#### 还缺什么
+
+Snapshot 缺少治理执行层（Governance Execution Layer）。
+
+这也是 DAOOS 希望解决的核心问题，即：
+
+Proposal → Vote → Execution → Verification → Audit
+
+而不是仅停留在 Proposal → Vote。
+
+---
+
+### 总结
+
+通过阅读 LangGraph、Safe 和 Snapshot，可以发现目前行业已经分别解决了：
+
+* LangGraph：Agent 工作流与长程任务执行
+* Safe：资金权限与安全执行
+* Snapshot：治理提案与投票
+
+但三者之间仍然存在一个明显空白：
+
+“治理决策通过后，如何利用 AI Agent 持续规划、跟踪、验证和审计项目执行过程。”
+
+DAOOS 的定位正是填补这一空白，成为连接 Governance、Execution 和 Settlement 的治理执行层。
+
