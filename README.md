@@ -1,194 +1,74 @@
-# AI-Governance-Execution-Layer-for-DAO
-# DAOOS：AI 治理执行与结算层
+# AI-Governance-Execution-Layer-for-DAO（DAOOS)
 
-## 参赛赛道
+## 项目背景（Problem）
 
-主赛道：
+当前大多数 DAO 已经具备成熟的治理机制，例如提案提交、社区讨论和链上投票。然而，提案通过之后的执行环节仍然高度依赖人工操作，包括项目规划、里程碑管理、进度跟踪、成果验收、资金发放和审计记录等工作。
+
+这种模式带来了几个现实问题：
+
+* 提案执行效率低
+* 项目进展缺乏持续跟踪
+* 成果验收标准不统一
+* 资金发放缺少自动化流程
+* 审计和责任追踪成本高
+
+DAOOS 希望解决“治理决策与实际交付之间的断层”，帮助 DAO 将已经通过的治理决议转化为可执行、可验证和可审计的工作流。
+
+---
+
+## 参赛赛道（Track）
+
+### 主赛道
 
 **Z.AI｜Web3 × Long-Horizon Task**
 
-赛道契合点：
+DAOOS 重点展示 AI Agent 如何：
+
+* 拆解复杂治理任务
+* 自动生成执行计划
+* 持续调用外部工具
+* 跟踪项目执行情况
+* 迭代修正执行方案
+* 完成从需求到交付的长周期工作流
+
+### 关联方向
 
 * Governance / Coordination / Public Goods
-* Wallet / Permission / Safe Execution
 * AI Security / Auditability
+* Wallet / Permission / Safe Execution
 
 ---
 
-## 项目简介
-
-DAOOS 是一个面向 DAO 和链上组织的 AI 治理执行层（AI Governance Execution Layer）。
-
-目前大多数 DAO 已经具备成熟的治理投票系统，但提案通过后仍然依赖大量人工完成预算管理、项目跟踪、成果验证、资金发放和审计报告等工作。
-
-DAOOS 不试图让 AI 替代治理决策，而是帮助 DAO 执行已经通过的治理决议，将治理流程从：
-
-提案 → 投票
-
-扩展为：
-
-提案 → 投票 → 执行 → 验证 → 结算 → 审计
-
-从而提升治理执行效率和透明度。
-
----
-
-## 目标用户
-
-* DAO 财库管理者（Treasury Manager）
-* DAO 运营团队（DAO Operations）
-* Grant 委员会
-* 公共物品资助组织（Public Goods）
-* Web3 基金会
-* 社区治理团队
-
----
-
-## 要解决的问题
-
-当前 DAO 的主要问题并非“无法做出决策”，而是“决策通过后难以执行”。
-
-典型流程如下：
-
-提案通过
-
-↓
-
-预算拆分
-
-↓
-
-任务跟踪
-
-↓
-
-成果验收
-
-↓
-
-资金发放
-
-↓
-
-审计记录
-
-这些流程通常由人工完成，存在以下问题：
-
-* 提案执行成本高
-* 项目跟踪效率低
-* 资金释放缺乏标准化流程
-* 审计和责任追踪困难
-* 长周期项目管理复杂
-
-DAOOS 希望利用 AI Agent 帮助 DAO 建立标准化的治理执行工作流。
-
----
-
-## 核心创新点
-
-### 1. 治理与执行之间的桥梁
-
-当前大多数 DAO 工具关注：
-
-* Proposal
-* Discussion
-* Voting
-
-DAOOS 关注：
-
-* Execution
-* Verification
-* Settlement
-* Audit
-
-填补治理决策与项目交付之间的空白。
-
----
-
-### 2. 长周期任务管理（Long-Horizon Task）
-
-AI 自动将提案拆解为多个里程碑（Milestone），并持续跟踪项目执行情况。
-
-例如：
-
-Milestone 1：
-产品原型设计
-
-Milestone 2：
-功能开发
-
-Milestone 3：
-部署上线
-
-符合 Z.AI 关于 Long-Horizon Task 的赛道方向。
-
----
-
-### 3. Escrow 结算机制
-
-资金不会一次性发放。
-
-而是：
-
-财库
-
-↓
-
-Escrow
-
-↓
-
-成果验证
-
-↓
-
-释放资金
-
-降低治理资金滥用风险。
-
----
-
-### 4. AI 行为审计（AI Behavior Audit）
-
-记录 Agent 的：
-
-* 决策过程
-* 使用证据
-* 调用工具
-* 风险评估
-
-确保所有 AI 行为可追踪、可解释、可复查。
-
----
-
-### 5. Human-in-the-Loop
-
-AI 不直接控制资金。
-
-所有资金释放均需：
-
-AI建议
-
-↓
-
-人工确认
-
-↓
-
-执行结算
-
-保证治理安全性。
-
----
-
-## MVP 最小可行产品
+## MVP 核心流程（MVP Flow）
+
+本次 Hackathon 聚焦于治理执行，而非治理投票。
+
+```text
+Proposal 提交
+        ↓
+Proposal Review Agent
+        ↓
+Milestone Planning Agent
+        ↓
+Proposal Approved（模拟）
+        ↓
+项目执行
+        ↓
+Verification Agent
+        ↓
+AI Audit Report
+        ↓
+Escrow Settlement Request
+        ↓
+人工审批
+```
 
 ### 1. Proposal Review Agent
 
 输入：
 
-* 项目提案
-* 预算
+* Proposal 内容
+* 预算信息
 * 时间规划
 
 输出：
@@ -201,107 +81,80 @@ AI建议
 
 ### 2. Milestone Planning Agent
 
-自动拆解项目计划。
+将提案自动拆解为多个可执行阶段。
 
 示例：
 
-Milestone 1：
-完成前端原型
-
-Milestone 2：
-完成后端开发
-
-Milestone 3：
-完成部署上线
+* Milestone 1：产品原型设计
+* Milestone 2：功能开发
+* Milestone 3：测试与部署
 
 ---
 
-### 3. Escrow Settlement Layer
+### 3. Verification Agent
 
-创建托管资金池。
-
-流程：
-
-DAO Treasury
-
-↓
-
-Escrow
-
-↓
-
-验证完成
-
-↓
-
-释放资金
-
----
-
-### 4. Verification Agent
-
-验证：
+验证项目执行情况：
 
 * GitHub 提交记录
+* 项目仓库活跃度
 * Demo 地址
-* 部署状态
+* 部署结果
 
-生成完成度评分。
+输出：
+
+* 完成度评分
+* 验证报告
 
 ---
 
-### 5. AI Behavior Audit Layer
+### 4. AI Behavior Audit Layer
 
 记录：
 
-* Agent 决策
+* Agent 决策过程
+* 调用工具记录
 * 使用证据
-* 工具调用记录
-* 风险评分
+* 风险评估结果
 
-生成审计报告。
+输出：
 
----
-
-### 6. Human Approval Layer
-
-所有结算流程必须经过人工确认。
-
-AI 不具备直接转账权限。
+* AI 审计报告
+* 决策追踪记录
 
 ---
 
-## 技术路线
+## 技术栈（Tech Stack）
 
-前端：
+### 前端
 
 * Next.js
-* Tailwind CSS
 * TypeScript
+* Tailwind CSS
 
-AI Agent：
-
-* GLM-5.1
-* LangGraph
-* Function Calling
-
-后端：
+### 后端
 
 * Node.js
 * FastAPI
 
-智能合约：
+### AI Agent
 
-* Solidity
-* Escrow Contract
+* GLM-5.1
+* LangGraph
+* Function Calling
+* Structured Output
 
-数据来源：
+### 数据来源
 
 * GitHub API
 * Proposal Metadata
 * 链上数据（可选）
 
-审计模块：
+### 智能合约
+
+* Solidity
+* Escrow Contract（测试网）
+
+### 审计模块
 
 * Decision Log
 * Tool Call Log
@@ -309,59 +162,17 @@ AI Agent：
 
 ---
 
-## 系统流程
-
-Proposal 提交
-
-↓
-
-Proposal Review Agent
-
-↓
-
-Milestone Planning Agent
-
-↓
-
-DAO 投票通过
-
-↓
-
-Escrow 创建
-
-↓
-
-项目执行
-
-↓
-
-Verification Agent
-
-↓
-
-Audit Report
-
-↓
-
-人工确认
-
-↓
-
-资金结算
-
----
-
-## 主要风险
+## 主要风险（Risks）
 
 ### 风险一：AI 幻觉
 
 问题：
 
-Agent 对 Proposal 做出错误分析。
+Agent 生成错误分析结果。
 
 解决方案：
 
-要求所有结论附带证据来源。
+所有分析结果必须附带证据来源。
 
 ---
 
@@ -369,11 +180,11 @@ Agent 对 Proposal 做出错误分析。
 
 问题：
 
-恶意用户诱导 Agent 产生错误行为。
+恶意 Proposal 影响 Agent 行为。
 
 解决方案：
 
-增加规则校验与安全策略层。
+增加规则校验和安全策略层。
 
 ---
 
@@ -385,7 +196,7 @@ Agent 无法准确判断项目是否完成。
 
 解决方案：
 
-结合 GitHub、部署记录和人工审核。
+结合 GitHub 数据和人工审核机制。
 
 ---
 
@@ -393,11 +204,11 @@ Agent 无法准确判断项目是否完成。
 
 问题：
 
-Agent 越权释放资金。
+资金在缺乏充分验证时被释放。
 
 解决方案：
 
-Escrow + Human Approval。
+采用 Escrow 机制并保留人工审批。
 
 ---
 
@@ -405,38 +216,99 @@ Escrow + Human Approval。
 
 问题：
 
-Hackathon 时间有限。
+Hackathon 时间有限，难以完成完整 DAO 操作系统。
 
 解决方案：
 
-聚焦：
-
-Proposal → Milestone → Escrow → Verification → Audit
-
-形成最小闭环。
+聚焦 Proposal → Milestone → Verification → Audit 核心闭环。
 
 ---
 
-## 未来规划
+## 验证计划（Validation Plan）
 
-V1：
+### 技术验证
+
+成功标准：
+
+* Proposal 能够成功上传和解析
+* Agent 能自动生成 Milestone
+* GitHub 项目能够被验证
+* Audit Report 能自动生成
+* 整个工作流能够完整运行
+
+---
+
+### 用户验证
+
+目标用户：
+
+* DAO 运营团队
+* Grant 审核人员
+* 公共物品资助组织
+
+重点验证问题：
+
+1. 是否减少了人工项目管理工作？
+2. Milestone 规划是否具有参考价值？
+3. 验证和审计结果是否易于理解？
+4. 是否提升治理执行效率和透明度？
+
+---
+
+### Demo 验证
+
+如果系统能够完整展示：
+
+```text
+Proposal
+↓
+AI 规划
+↓
+项目验证
+↓
+审计报告
+↓
+结算申请
+```
+
+并完成端到端流程，则 MVP 验证成功。
+
+---
+
+## 未来规划（Roadmap）
+
+### V1
 
 AI Governance Execution Layer
 
-V2：
+实现治理执行自动化。
+
+### V2
 
 Treasury Management
 
-V3：
+引入预算管理与财库分析。
+
+### V3
 
 Agent Procurement Network
 
-V4：
+支持 Agent 搜索和采购服务。
+
+### V4
 
 Agent Reputation & Identity Layer
 
-V5：
+建立 Agent 信誉和身份体系。
+
+### V5
 
 AI-Native DAO Operating System
 
-最终目标是构建一个让 DAO 能够安全地委托 AI 执行治理决议、管理项目交付和资金流转的 AI 原生运营系统。
+构建面向 DAO 的 AI 原生运营系统。
+
+---
+
+## 项目愿景（Vision）
+
+DAOOS 不试图让 AI 替代 DAO 做出治理决策，而是帮助组织更高效地执行已经通过的治理决议。通过 AI 驱动的任务规划、成果验证、审计追踪和长期任务管理能力，DAOOS 希望成为连接“治理决策”与“实际交付”之间的执行层基础设施。
