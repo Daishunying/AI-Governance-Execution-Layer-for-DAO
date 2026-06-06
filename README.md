@@ -493,3 +493,167 @@ Proposal → Vote → Execution → Verification → Audit
 
 DAOOS 的定位正是填补这一空白，成为连接 Governance、Execution 和 Settlement 的治理执行层。
 
+---
+
+Week 4 的目标不是完成一个完整的 DAO Operating System，而是验证 DAOOS 核心架构中的关键技术假设。因此我们将围绕 Agent Workflow、Long-Horizon Task、Web3 Execution 和 Auditability 四个维度进行验证。
+
+**1. Agent Workflow 与 Long-Horizon Task 验证**
+
+验证 Proposal Review Agent 和 Milestone Planning Agent 是否能够将一个 Proposal 自动转换为结构化执行计划。重点验证 Agent 是否能够生成 Proposal 摘要、风险分析、Milestone 规划和验收标准，并保留完整的 Agent Trace（输入、输出、推理步骤和状态变化记录）。
+
+验证材料：
+
+* Proposal 输入样例
+* Agent 输出结果
+* LangGraph Workflow 图
+* Agent Trace 截图
+
+---
+
+**2. Tool Calling 与 GitHub API 调用**
+
+验证 Verification Agent 是否能够调用外部工具获取项目执行证据。
+
+重点验证：
+
+* GitHub Repository 读取
+* Commit 数量统计
+* 最近活跃记录获取
+* Deliverable 信息读取
+
+验证材料：
+
+* GitHub API 调用日志
+* Tool Call Trace
+* Verification Report
+
+---
+
+**3. Escrow Contract 与合约交互**
+
+验证 Escrow Settlement 流程是否能够在测试网运行。
+
+重点验证：
+
+* 创建 Escrow
+* 查询 Escrow 状态
+* 提交 Settlement Request
+* 释放资金逻辑
+
+验证材料：
+
+* 合约部署地址
+* 测试网交易 Hash
+* 区块浏览器截图
+* 合约交互录屏
+
+---
+
+**4. 钱包权限与 Safe Execution**
+
+验证 Agent 无法直接控制全部资金。
+
+重点验证：
+
+* Human-in-the-Loop 审批
+* 权限检查逻辑
+* 预算额度限制
+* Settlement Request 审核流程
+
+验证材料：
+
+* 权限配置截图
+* 审批流程截图
+* 流程图说明
+
+---
+
+**5. AI Behavior Audit Layer**
+
+验证 Agent 行为是否可追溯。
+
+重点记录：
+
+* Agent Decision
+* Tool Calls
+* Evidence Sources
+* Risk Assessment
+* Settlement Recommendation
+
+验证材料：
+
+* Audit Report
+* Agent Trace Log
+* Evidence Trace
+* JSON 审计记录
+
+---
+
+**6. End-to-End Workflow**
+
+验证整个系统是否能够跑通最小闭环。
+
+验证链路：
+
+Proposal Upload
+
+↓
+
+Proposal Review
+
+↓
+
+Milestone Planning
+
+↓
+
+Proposal Approved（Mock）
+
+↓
+
+Verification
+
+↓
+
+Audit Report
+
+↓
+
+Settlement Request
+
+↓
+
+Human Approval
+
+重点验证：
+
+* 数据流是否完整
+* Agent 状态是否持续保存
+* 审计记录是否完整生成
+
+验证材料：
+
+* Demo 录屏
+* 系统架构图
+* 工作流截图
+
+---
+
+**7. MVP Demo 截图清单**
+
+最终至少准备以下 Demo 证据：
+
+1. Proposal 上传页面
+2. Proposal Review 输出结果
+3. Milestone Planning 输出结果
+4. GitHub Verification 页面
+5. Agent Trace 页面
+6. Audit Report 页面
+7. Escrow Contract 交互页面
+8. 测试网交易记录
+9. Human Approval 页面
+10. End-to-End Workflow 总流程图
+
+通过以上验证，我们希望证明 AI Agent 可以在可控边界内完成 Proposal 分析、任务拆解、工具调用、成果验证、审计记录和结算申请等长周期治理执行任务，同时满足 Agent Workflow、Safe Execution 和 Auditability 的要求。
+
+
