@@ -62,6 +62,77 @@ Escrow Settlement Request
         ↓
 人工审批
 ```
+DAOOS 的最小闭环聚焦于“Proposal → Milestone → Verification → Audit”这一核心执行链路，验证 AI Agent 是否能够帮助 DAO 将已经通过的治理决议转化为可执行、可验证和可审计的成果。
+
+```text
+┌─────────────────────────┐
+│       用户输入          │
+├─────────────────────────┤
+│ Proposal               │
+│ Budget                 │
+│ Timeline               │
+│ GitHub Repository      │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│  Proposal Review Agent │
+├─────────────────────────┤
+│ 提案摘要                │
+│ 风险分析                │
+│ Milestone建议          │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ Milestone Planning Agent│
+├─────────────────────────┤
+│ 任务拆解                │
+│ 时间规划                │
+│ 验收标准生成            │
+└────────────┬────────────┘
+             │
+             ▼
+      Proposal Approved
+         （Mock）
+             │
+             ▼
+┌─────────────────────────┐
+│      Web3 Layer         │
+├─────────────────────────┤
+│ Escrow Contract         │
+│ Testnet Treasury        │
+│ Settlement Request      │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ Verification Agent      │
+├─────────────────────────┤
+│ GitHub API              │
+│ Commit Analysis         │
+│ Deliverable Check       │
+│ Deployment Evidence     │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ AI Behavior Audit Layer │
+├─────────────────────────┤
+│ Decision Log            │
+│ Tool Call Log           │
+│ Evidence Log            │
+│ Risk Assessment         │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ Human Approval          │
+├─────────────────────────┤
+│ 审查结果                │
+│ 批准结算
+```
+
 
 ### 1. Proposal Review Agent
 
